@@ -25,7 +25,8 @@ import javax.script.Bindings;
 import javax.script.ScriptContext;
 import javax.script.ScriptEngineFactory;
 import javax.script.ScriptException;
-import javax.script.SimpleBindings;
+
+import org.apache.sling.api.scripting.LazyBindings;
 
 public abstract class AbstractSlingScriptEngine extends AbstractScriptEngine {
 
@@ -36,7 +37,7 @@ public abstract class AbstractSlingScriptEngine extends AbstractScriptEngine {
     }
 
     public Bindings createBindings() {
-        return new SimpleBindings();
+        return new LazyBindings();
     }
 
     public Object eval(String script, ScriptContext context) throws ScriptException {
