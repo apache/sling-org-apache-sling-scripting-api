@@ -18,31 +18,28 @@
  */
 package org.apache.sling.scripting.api;
 
-import java.util.Collection;
-
 import javax.script.ScriptEngineFactory;
 
-import org.apache.sling.scripting.api.BindingsValuesProvider;
+import java.util.Collection;
 
 /** Provides {@link BindingsValuesProvider} for specific contexts, based on
  *  their "context" service property.
  *  */
 public interface BindingsValuesProvidersByContext {
-    
+
     /** Retrieve the current {@link BindingsValuesProvider} for
      *  the supplied ScriptEngineFactory and context.
-     *  
+     *
      * @param scriptEngineFactory metadata of the ScriptEngine that's being used
      * @param context Only BindingsValuesProviders that have this value in their CONTEXT
      *          service property are considered. For backwards compatibility, BindingsValuesProviders
-     *          which do not have a CONTEXT service property are considered to have CONTEXT=request.  
+     *          which do not have a CONTEXT service property are considered to have CONTEXT=request.
      * @return The returned Collection of BindingsValuesProvider is sorted
      *          so as to give preference to more specific BindingsValuesProvider
      *          over those that match a compatible.javax.script.name ScriptEngineFactory property,
      *          for example, in the same way that the SlingScriptAdapterFactory did before
-     *          this service was implemented. 
+     *          this service was implemented.
      */
     Collection<BindingsValuesProvider> getBindingsValuesProviders(
-            ScriptEngineFactory scriptEngineFactory,
-            String context);
+            ScriptEngineFactory scriptEngineFactory, String context);
 }
