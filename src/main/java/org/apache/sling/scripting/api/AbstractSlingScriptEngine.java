@@ -18,13 +18,13 @@
  */
 package org.apache.sling.scripting.api;
 
-import java.io.StringReader;
-
 import javax.script.AbstractScriptEngine;
 import javax.script.Bindings;
 import javax.script.ScriptContext;
 import javax.script.ScriptEngineFactory;
 import javax.script.ScriptException;
+
+import java.io.StringReader;
 
 import org.apache.sling.api.scripting.LazyBindings;
 
@@ -48,5 +48,4 @@ public abstract class AbstractSlingScriptEngine extends AbstractScriptEngine {
     public ScriptEngineFactory getFactory() {
         return scriptEngineFactory;
     }
-
 }

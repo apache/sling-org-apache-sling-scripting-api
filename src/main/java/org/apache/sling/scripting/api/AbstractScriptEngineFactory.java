@@ -18,6 +18,9 @@
  */
 package org.apache.sling.scripting.api;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
@@ -26,15 +29,11 @@ import java.util.List;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineFactory;
-
 /**
  * This abstract class can be used for own script engine
  * factory implementations.
  */
-public abstract class AbstractScriptEngineFactory
-    implements ScriptEngineFactory {
+public abstract class AbstractScriptEngineFactory implements ScriptEngineFactory {
 
     /** The engine name. */
     private String engineName;
@@ -226,5 +225,4 @@ public abstract class AbstractScriptEngineFactory
     public String getProgram(String... arg0) {
         return null;
     }
-
 }
